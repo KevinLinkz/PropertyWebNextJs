@@ -50,8 +50,6 @@ const NavBar = () => {
                         )
                     })}
                     <button className='button-green' type='button'>Add Property</button>
-
-
                 </div>
             </div >
         </section>

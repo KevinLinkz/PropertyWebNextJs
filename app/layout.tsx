@@ -1,10 +1,12 @@
+"use client"
 import './globals.css'
+import 'bootstrap/dist/css/bootstrap.css'
 import '@style/style.scss'
 import type { Metadata } from 'next'
 import { Heebo } from '@next/font/google'
 import { Inter } from '@next/font/google'
-
 import NavBar from '@components/NavBar'
+import { Container } from 'react-bootstrap'
 
 const heebo = Heebo({ subsets: ['latin'] })
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -18,12 +20,10 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
   return (
     <html lang="en">
       <body className={`${inter.variable} ${heebo.className} `}>
-        <div className='container border-2 border-red-500 max-w-[1320px] h-[100vh] flex mx-auto relative'>
+        <Container className='flex flex-col relative h-[100vh] border-2 border-red-500 p-0'>
           <NavBar />
-
           {children}
-
-        </div>
+        </Container>
       </body>
     </html>
   )
