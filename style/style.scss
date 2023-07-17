@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button-green {
+    @apply bg-green text-white p-2 rounded-md text-sm font-medium ease-in duration-300;
+
+    &:hover {
+        @apply bg-green-hover;
+    }
+}
+.button-navigation{
+    @apply cursor-pointer bg-green  h-12 w-12 rounded-full flex justify-center items-center ease-in duration-300 ;
+   
+    &:hover {
+        @apply bg-darkblue;
+    }
+    svg{
+         polyline{
+             stroke: white;
+             stroke-width: 3;
+         }
+
+     }
+}
