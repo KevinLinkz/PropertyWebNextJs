@@ -18,7 +18,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
   return (
     <html lang="en">
       <body className={`${inter.variable} ${heebo.className} `}>
-        <div className='container border-2 border-red-500 max-w-[1320px] h-[100vh] flex mx-auto relative'>
+        <div className='container border-2 border-red-500 lg:max-w-[1320px] md:max-w-[992px] sm:max-w-[767px] xs:max-w-[576px] h-screen flex mx-auto relative'>
           <NavBar />
 
           {children}

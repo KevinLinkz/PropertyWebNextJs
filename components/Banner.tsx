@@ -38,8 +38,8 @@ const Banner = () => {
                         }}
                         grabCursor
                         loop
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
+                    // onSlideChange={() => console.log('slide change')}
+                    // onSwiper={(swiper) => console.log(swiper)}
                     >
                         <SwiperSlide><Image loading='lazy' className='object-cover' src={img1} alt='test'></Image></SwiperSlide>
                         <SwiperSlide><Image className='object-cover' src={img2} alt='test'></Image></SwiperSlide>
