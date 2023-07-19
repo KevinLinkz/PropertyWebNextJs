@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
-import IconDeal from '@img/icon-deal.png'
+import React, { useEffect, useRef, useState } from 'react'
+import IconNav from '@img/icon-deal.png'
 import Image from 'next/image'
 import { BiSolidChevronDown } from 'react-icons/bi'
 const links = [
@@ -70,23 +70,41 @@ const links = [
 ]
 
 const NavBar = () => {
-    const [isOpenDropDownList, setOpenDropDownList] = useState(false);
+    const [isNavbarSticky, setIsNavbarSticky] = useState(false);
+    const [isNavbarActive, setIsNavbarActive] = useState('HOME');
     const [classDropDown, setClassDropDown] = useState('');
+    const refNavBar = useRef<HTMLDivElement>(null)
 
     const handleMouseOverDropDownItems = (title: string) => {
-        console.log("🚀 ~ file: NavBar.tsx:75 ~ NavBar ~ classDropDown:", classDropDown)
         setClassDropDown(title)
     }
     const handleMouseLeaveDropDownItems = (title: string) => {
-        console.log("🚀 ~ file: NavBar.tsx:752 ~ NavBar ~ classDropDown:", classDropDown)
         setClassDropDown('')
     }
+
+    const handleNavLinkActive = (title: string, event: Element) => {
+        setIsNavbarActive(title);
+    }
+
+    const handleNavBar = () => {
+        const nav = refNavBar.current as HTMLDivElement;
+        (window.scrollY > (nav.offsetHeight - 70)) ? setIsNavbarSticky(true) : setIsNavbarSticky(false)
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleNavBar);
+        handleNavBar();
+        return () => {
+            window.removeEventListener('scroll', handleNavBar);
+        }
+    }, [])
+
     return (
-        <section id='Navbar'>
-            <div className='flex justify-between items-center p-2  h-[70px] bg-white absolute top-10 inset-x-10 z-10 shadow-lg' >
+        <div ref={refNavBar} id='Navbar' className={`h-[120px] flex  z-20  transition-all ease duration-500 ${isNavbarSticky === true ? 'sticky top-0 items-start px-0' : 'items-end px-8'}`}>
+            <div className='w-full h-[70px] flex justify-between items-center px-5 bg-white shadow-2xl'>
                 <div className='flex justify-center items-center h-full cursor-pointer'>
-                    <div className='flex justify-center items-center w-9 h-9 border-2 border-green border-dashed rounded-full'>
-                        <Image src={IconDeal} alt='Real Estate Deal' className='w-6 h-6 '></Image>
+                    <div className='flex justify-center items-center w-11 h-11 border border-green border-dashed rounded-full'>
+                        <Image src={IconNav} alt='Real Estate Deal' className='w-7 h-7'></Image>
                     </div>
                     <h2 className='text-green text-4xl my-auto ml-2 font-bold'>Makaan</h2>
                 </div>
@@ -96,7 +114,7 @@ const NavBar = () => {
                         if (link.isDropdown) {
                             return (
                                 <div className='flex items-center relative h-[70px]' onMouseLeave={() => handleMouseLeaveDropDownItems(link.title)} onMouseOver={() => handleMouseOverDropDownItems(link.title)} key={`cover-dropdown-${link.id}`} >
-                                    <Link className='pr-4 font-medium text-[15px] hover:text-green flex transition ease delay-100' key={link.id} href={link.url}>{link.title}<BiSolidChevronDown key={`icons-${link.id}`} className='mt-[2px] ml-[3px]' size="1em" /></Link>
+                                    <Link onClick={() => setIsNavbarActive(link.title)} className={`pr-5 font-medium text-[16px] hover:text-green flex transition ease delay-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}<BiSolidChevronDown key={`icons-${link.id}`} className={`mt-[2px] ml-[3px] transition-all ease duration-500  ${isNavbarActive === link.title ? '-rotate-180' : 'rotate-0'}`} size="1em" /></Link>
                                     <div key={`dropdown-menu-${link.id}`} className={`w-40 h-max border-2 bg-white absolute top-[70px] transition-all ease duration-300 ${classDropDown === link.title ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 invisible'}`}>
                                         <ul key={`ul-menu-${link.id}`}>
                                             {link.childPages.map((childPage, index) => {
@@ -111,15 +129,15 @@ const NavBar = () => {
                             )
                         } else {
                             return (
-                                <Link className='pr-6 font-medium text-[15px] hover:text-green transition ease duration-100' key={link.id} href={link.url}>{link.title}</Link>
+                                <Link onClick={() => setIsNavbarActive(link.title)} className={`pr-6 font-medium text-[16px] hover:text-green transition ease duration-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}</Link>
                             )
                         }
 
                     })}
-                    <button className='button-green' type='button'>Add Property</button>
+                    <button className='button-green ' type='button'>Add Property</button>
                 </div>
             </div >
-        </section >
+        </div >
 
 
     )

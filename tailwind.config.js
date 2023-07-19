@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         'green': '#00B98E',
+        'green-body': '#EFFDF5',
         'green-hover': '#00cf9f',
         'darkblue': '#0E2E50',
       },
