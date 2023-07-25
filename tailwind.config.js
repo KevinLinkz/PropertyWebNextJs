@@ -14,10 +14,12 @@ module.exports = {
       },
       colors: {
         'green': '#00B98E',
+        'green-300': '#00d4a3',
         'green-body': '#EFFDF5',
         'green-hover': '#00cf9f',
         'darkblue': '#0E2E50',
-      },
+        'darkblue-hover': '#19508b',
+      }
     },
   },
   plugins: [],

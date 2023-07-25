@@ -4,7 +4,6 @@
 
 .button-green {
     @apply bg-green text-white py-2 px-6 rounded-md text-[16px] font-medium ease-in duration-300;
-
     &:hover {
         @apply bg-green-hover;
     }
@@ -22,5 +21,15 @@
          }
 
      }
+}
+.button-property-listing{
+    @apply border border-green flex justify-center items-center px-2 py-2 mr-5 rounded-lg text-sm  ease-in-out duration-300 ;
+
+    &.active{
+        @apply ring-4 ring-green-300 bg-green text-white;
+    }
+    &:hover{
+        @apply bg-green text-white;
+    }
 }
 
