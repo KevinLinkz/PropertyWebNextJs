@@ -9,7 +9,7 @@
     }
 }
 .button-navigation{
-    @apply cursor-pointer bg-green  h-12 w-12 rounded-full flex justify-center items-center ease-in duration-300 ;
+    @apply cursor-pointer bg-green h-12 w-12 rounded-full flex justify-center items-center ease-in duration-300 ;
    
     &:hover {
         @apply bg-darkblue;

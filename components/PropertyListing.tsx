@@ -1,5 +1,4 @@
 "use client";
-import Image from 'next/image'
 import React, { useState } from 'react'
 import PropertyListingDiv from './microComponents/PropertyListingDiv'
 
@@ -25,7 +24,7 @@ const datas = [
         "bed": 3,
         "bath": 2,
         "type": "For Sell",
-        "typeBuilding": "Apartment",
+        "typeBuilding": "Villa",
         "img-url": "/property-2.jpg"
     },
     {
@@ -37,7 +36,7 @@ const datas = [
         "bed": 3,
         "bath": 2,
         "type": "For Sell",
-        "typeBuilding": "Apartment",
+        "typeBuilding": "Office",
         "img-url": "/property-3.jpg"
     },
     {
@@ -49,7 +48,7 @@ const datas = [
         "bed": 3,
         "bath": 2,
         "type": "For Sell",
-        "typeBuilding": "Apartment",
+        "typeBuilding": "Building",
         "img-url": "/property-4.jpg"
     },
     {
@@ -61,7 +60,7 @@ const datas = [
         "bed": 3,
         "bath": 2,
         "type": "For Sell",
-        "typeBuilding": "Apartment",
+        "typeBuilding": "Home",
         "img-url": "/property-5.jpg"
     },
     {
@@ -73,7 +72,7 @@ const datas = [
         "bed": 3,
         "bath": 2,
         "type": "For Sell",
-        "typeBuilding": "Apartment",
+        "typeBuilding": "Shop",
         "img-url": "/property-6.jpg"
     },
 ]
@@ -87,11 +86,11 @@ const PropertyListing = () => {
             <h1 className='text-4xl font-bold mb-5'>Property Listing</h1>
             <div className='w-full h-full flex justify-around items-center mb-5'>
                 <p className='w-[90%] text-stone-500'>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit diam justo sed rebum.</p>
-                <div className='w-full flex justify-end items-center'>
+                <div className='w-full flex justify-end items-end'>
                     {
                         lstButton.map((text) => {
                             return (
-                                <button className={`button-property-listing ${isButtonActive === text ? 'active' : ''}`} onClick={() => { setIsButtonActive(text) }}>{text}</button>
+                                <button key={`button-${text}`} className={`button-property-listing ${isButtonActive === text ? 'active' : ''}`} onClick={() => { setIsButtonActive(text) }}>{text}</button>
                             )
                         })
                     }
@@ -101,11 +100,15 @@ const PropertyListing = () => {
                 {
                     datas.map((data) => {
                         return (
-                            <PropertyListingDiv imgUrl={data["img-url"]} type={data.type} typeBuilding={data.typeBuilding} price={data.price} title={data.title} address={data.address} area={data.area} bed={data.bed} bath={data.bath} />
+                            <PropertyListingDiv key={`property-lists-${data.id}`} imgUrl={data["img-url"]} type={data.type} typeBuilding={data.typeBuilding} price={data.price} title={data.title} address={data.address} area={data.area} bed={data.bed} bath={data.bath} />
                         )
                     })
                 }
             </div>
+            <div className='w-full mt-8 mb-16 flex justify-center '>
+                <button className='button-green w-64 h-14'>Browse More Property</button>
+            </div>
+
         </section>
     )
 }
