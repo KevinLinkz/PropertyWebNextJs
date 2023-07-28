@@ -10,7 +10,7 @@ const datas = [
     {
         "id": 1,
         "img-url": "/team-1.jpg",
-        "name": "Kevin",
+        "name": "Grace",
         "profile": "Developer",
         "urlFacebook": "www.facebook.com",
         "urlTwitter": "www.twitter.com",
