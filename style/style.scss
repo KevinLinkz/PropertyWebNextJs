@@ -33,3 +33,9 @@
     }
 }
 
+.myAnimated{
+    animation: fadeInUp; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+    animation-delay: 6s;
+     
+}

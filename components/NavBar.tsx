@@ -100,13 +100,13 @@ const NavBar = () => {
     }, [])
 
     return (
-        <div ref={refNavBar} id='Navbar' className={`h-[120px] flex  z-20  transition-all ease duration-500 ${isNavbarSticky === true ? 'sticky top-0 items-start px-0' : 'items-end px-8'}`}>
+        <div ref={refNavBar} id='Navbar' className={` h-[120px] flex  z-20  transition-all ease duration-500 ${isNavbarSticky === true ? 'sticky top-0 items-start px-0' : 'items-end px-8'}`}>
             <div className='w-full h-[70px] flex justify-between items-center px-5 bg-white shadow-2xl'>
                 <div className='flex justify-center items-center h-full cursor-pointer'>
                     <div className='flex justify-center items-center w-11 h-11 border border-green border-dashed rounded-full'>
                         <Image src={IconNav} alt='Real Estate Deal' className='w-7 h-7'></Image>
                     </div>
-                    <h2 className='text-green text-4xl my-auto ml-2 font-bold'>Makaan</h2>
+                    <h2 className=' text-green text-4xl my-auto ml-2 font-bold'>Makaan</h2>
                 </div>
 
                 <div className='flex w-30 items-center pr-2'>

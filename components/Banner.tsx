@@ -16,7 +16,7 @@ const Banner = () => {
         <section id='Banner' className='w-full h-[680px] mt-[-120px]'>
             <div className='w-full h-full flex relative '>
                 <div className='w-2/4 h-full flex flex-col justify-center p-10'>
-                    <h1 className='w-full  text-[46px] font-bold leading-tight'>Find A <span className='text-green'>Perfect Home</span> To Live With Your Family</h1>
+                    <h1 className=' w-full  text-[46px] font-bold leading-tight'>Find A <span className='text-green'>Perfect Home</span> To Live With Your Family</h1>
                     <p className='my-6 font-normal text-stone-500'>Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
                     <button className='button-green w-52 h-14'> Get Started</button>
                     <button className='button-navigation btn-next-slide absolute z-10 top-[49%] start-[48%]'><GrNext size="1.2em" /></button>

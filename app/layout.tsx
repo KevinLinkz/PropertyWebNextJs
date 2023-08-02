@@ -5,6 +5,7 @@ import { Heebo } from '@next/font/google'
 import { Inter } from '@next/font/google'
 
 import NavBar from '@components/NavBar'
+import Footer from '@components/Footer'
 
 const heebo = Heebo({ subsets: ['latin'] })
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -23,7 +24,8 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
           <NavBar />
 
           {children}
-          <div className=' h-[100vh] bg-sky-500'></div>
+          <Footer />
+
 
         </div>
       </body>

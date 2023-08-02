@@ -1,6 +1,6 @@
-"use client";
 import React, { useState } from 'react'
 import PropertyListingDiv from './microComponents/PropertyListingDiv'
+import AnimatedAOS from '@components/AnimatedAOS'
 
 const datas = [
     {
@@ -13,7 +13,7 @@ const datas = [
         "bath": 2,
         "type": "For Sell",
         "typeBuilding": "Apartment",
-        "img-url": "/property-1.jpg"
+        "img-url": "/img/property-1.jpg"
     },
     {
         "id": 2,
@@ -25,7 +25,7 @@ const datas = [
         "bath": 2,
         "type": "For Sell",
         "typeBuilding": "Villa",
-        "img-url": "/property-2.jpg"
+        "img-url": "/img/property-2.jpg"
     },
     {
         "id": 3,
@@ -37,7 +37,7 @@ const datas = [
         "bath": 2,
         "type": "For Sell",
         "typeBuilding": "Office",
-        "img-url": "/property-3.jpg"
+        "img-url": "/img/property-3.jpg"
     },
     {
         "id": 4,
@@ -49,7 +49,7 @@ const datas = [
         "bath": 2,
         "type": "For Sell",
         "typeBuilding": "Building",
-        "img-url": "/property-4.jpg"
+        "img-url": "/img/property-4.jpg"
     },
     {
         "id": 5,
@@ -61,7 +61,7 @@ const datas = [
         "bath": 2,
         "type": "For Sell",
         "typeBuilding": "Home",
-        "img-url": "/property-5.jpg"
+        "img-url": "/img/property-5.jpg"
     },
     {
         "id": 6,
@@ -73,7 +73,7 @@ const datas = [
         "bath": 2,
         "type": "For Sell",
         "typeBuilding": "Shop",
-        "img-url": "/property-6.jpg"
+        "img-url": "/img/property-6.jpg"
     },
 ]
 
@@ -82,34 +82,45 @@ const PropertyListing = () => {
     const [isButtonActive, setIsButtonActive] = useState(lstButton[0]);
 
     return (
+
         <section id='PropertyListing' className='w-full h-full px-5'>
-            <h1 className='text-4xl font-bold mb-5'>Property Listing</h1>
-            <div className='w-full h-full flex justify-around items-center mb-5'>
-                <p className='w-[90%] text-stone-500'>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit diam justo sed rebum.</p>
-                <div className='w-full flex justify-end items-end'>
-                    {
-                        lstButton.map((text) => {
-                            return (
-                                <button key={`button-${text}`} className={`button-property-listing ${isButtonActive === text ? 'active' : ''}`} onClick={() => { setIsButtonActive(text) }}>{text}</button>
-                            )
-                        })
-                    }
-                </div>
+            <div className='grid grid-cols-2 grid-rows-1 w-full mb-10'>
+                <AnimatedAOS className="" data-aos="fade-right" data-aos-once="false" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                    <h1 className='text-4xl font-bold mb-5'>Property Listing</h1>
+                    <p className='w-[90%] text-stone-500'>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit diam justo sed rebum.</p>
+                </AnimatedAOS>
+                <AnimatedAOS className="w-full h-full flex justify-around items-end mb-5" data-aos="fade-left" data-aos-once="false" data-aos-duration="1000" data-aos-easing="ease-in-out">
+
+
+                    <div className='w-full flex justify-end items-end'>
+                        {
+                            lstButton.map((text) => {
+                                return (
+                                    <button key={`button-${text}`} className={`button-property-listing ${isButtonActive === text ? 'active' : ''}`} onClick={() => { setIsButtonActive(text) }}>{text}</button>
+                                )
+                            })
+                        }
+                    </div>
+
+                </AnimatedAOS>
+
             </div>
             <div className='grid grid-rows-2 grid-cols-3 gap-7'>
                 {
                     datas.map((data) => {
                         return (
-                            <PropertyListingDiv key={`property-lists-${data.id}`} imgUrl={data["img-url"]} type={data.type} typeBuilding={data.typeBuilding} price={data.price} title={data.title} address={data.address} area={data.area} bed={data.bed} bath={data.bath} />
+                            <PropertyListingDiv key={`property-lists-${data.id}`} id={data.id} imgUrl={data["img-url"]} type={data.type} typeBuilding={data.typeBuilding} price={data.price} title={data.title} address={data.address} area={data.area} bed={data.bed} bath={data.bath} />
                         )
                     })
                 }
             </div>
-            <div className='w-full mt-8 mb-16 flex justify-center '>
+            <AnimatedAOS className='w-full mt-8 mb-16 flex justify-center ' data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease">
                 <button className='button-green w-64 h-14'>Browse More Property</button>
-            </div>
+            </AnimatedAOS>
+
 
         </section>
+
     )
 }
 
