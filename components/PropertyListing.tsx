@@ -105,7 +105,7 @@ const PropertyListing = () => {
                 </AnimatedAOS>
 
             </div>
-            <div className='grid grid-rows-2 grid-cols-3 gap-7'>
+            <div className='grid grid-rows-2 lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-7'>
                 {
                     datas.map((data) => {
                         return (

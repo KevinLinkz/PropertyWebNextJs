@@ -19,7 +19,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
   return (
     <html lang="en">
       <body className={`${inter.variable} ${heebo.className} bg-green-body`}>
-        <div className='container border border-red-500 lg:max-w-[1320px] md:max-w-[992px] sm:max-w-[767px] xs:max-w-[576px] h-[100%] flex flex-col mx-auto relative bg-white '>
+        <div className='container 2xl:max-w-[1320px] lg:max-w-[1320px] md:max-w-[992px] sm:max-w-[767px] xs:max-w-[576px] h-[100%] flex flex-col mx-auto relative bg-white '>
 
           <NavBar />
 
