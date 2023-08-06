@@ -14,8 +14,8 @@ import AnimatedAOS from '@components/AnimatedAOS'
 const Footer = () => {
     return (
         <AnimatedAOS className='' data-aos="fade-in" data-aos-once="false" data-aos-duration="1000" data-aos-easing="ease">
-            <section id='Footer' className='w-full border-2 border-red-500 bg-darkblue '>
-                <div className='grid grid-cols-4 grid-rows-1 gap-y-10 w-full px-7 pt-20 '>
+            <section id='Footer' className='w-full bg-darkblue xl:px-5 xs:px-10'>
+                <div className='grid lg:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1 grid-rows-1 lg:gap-y-10 xs:gap-y-12  gap-x-5 w-full  pt-20 mb-20'>
                     <div className='w-full h-full flex flex-col'>
                         <h3 className='text-xl fon flex flex-col font-bold text-white mb-7'>Get In Touch</h3>
                         <span className='flex items-center text-slate-400 text-md font-medium mb-2'><MdLocationOn size={20} className='mr-4' />123 Street, New York, USA</span>
@@ -60,13 +60,13 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='col-span-full w-full h-20 border-t border-slate-600 text-slate-400 font-medium flex justify-between px-5 my-5 py-5 mt-20'>
-                    <div className=''>
+                <div className='w-full h-full border-t border-slate-600 text-slate-400 font-medium flex md:flex-row xs:flex-col justify-between items-center px-5'>
+                    <div className='md:text-left xs:text-center my-5  '>
                         <p>© <span className='text-white underline underline-offset-2'>Your Site Name</span>, All Right Reserved. Designed By <span className='text-white underline underline-offset-2'>HTML Codex</span></p>
                         <p>Distributed By <span className='text-white underline underline-offset-2'>ThemeWagon</span></p>
                     </div>
 
-                    <div className='text-white'>
+                    <div className='text-white lg:mb-0 xs:mb-5'>
                         <Link href='' className='border-r-2 border-slate-600 px-3'>Home</Link>
                         <Link href='' className='border-r-2 border-slate-600 px-3'>Cookies</Link>
                         <Link href='' className='border-r-2 border-slate-600 px-3'>Help</Link>

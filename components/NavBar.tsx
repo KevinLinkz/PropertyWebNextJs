@@ -71,10 +71,11 @@ const links = [
 ]
 
 const NavBar = () => {
-    const [isNavbarSticky, setIsNavbarSticky] = useState(false);
-    const [isToggleMenu, setIsToggleMenu] = useState(false);
-    const [isNavbarActive, setIsNavbarActive] = useState('HOME');
-    const [classDropDown, setClassDropDown] = useState('');
+    const [isNavbarSticky, setIsNavbarSticky] = useState<boolean>(false);
+    const [isToggleMenu, setIsToggleMenu] = useState<boolean>(false);
+    const [isNavbarActive, setIsNavbarActive] = useState<string>('HOME');
+    const [classDropDown, setClassDropDown] = useState<string>('');
+    const [offsetNavBar, setOffsetNavBar] = useState<number>(0);
     const refNavBar = useRef<HTMLDivElement>(null)
 
     const handleMouseOverDropDownItems = (title: string) => {
@@ -88,20 +89,30 @@ const NavBar = () => {
 
     const handleNavBar = () => {
         const nav = refNavBar.current as HTMLDivElement;
-        (window.scrollY > (nav.offsetHeight - 700)) ? setIsNavbarSticky(true) : setIsNavbarSticky(false)
+        (window.scrollY > (nav.offsetHeight - offsetNavBar)) ? setIsNavbarSticky(true) : setIsNavbarSticky(false)
+    }
+    const handleNavBarResize = () => {
+        const widthClient = window.innerWidth as number;
+        if (widthClient >= 1024)
+            setOffsetNavBar(70)
+        else
+            setOffsetNavBar(700)
     }
 
     useEffect(() => {
         window.addEventListener('scroll', handleNavBar);
+        window.addEventListener('resize', handleNavBarResize);
         handleNavBar();
+        handleNavBarResize();
         return () => {
             window.removeEventListener('scroll', handleNavBar);
+            window.removeEventListener('resize', handleNavBarResize);
         }
-    }, [])
+    }, [offsetNavBar])
 
     return (
         <div ref={refNavBar} id='Navbar' className={`lg:h-[100px] lg:flex z-20 transition-all ease duration-500 ${isNavbarSticky === true ? 'sticky top-0 items-start px-0' : 'items-end lg:px-8'}`}>
-            <div className='w-full h-[70px] flex justify-between items-center px-5 bg-white shadow-2xl border-b border-grey-500 '>
+            <div className='w-full h-[70px] flex justify-between items-center px-5 bg-white shadow-lg'>
                 <div className='flex justify-center items-center h-full cursor-pointer'>
                     <div className='flex justify-center items-center w-11 h-11 border border-green border-dashed rounded-full'>
                         <Image src={IconNav} alt='Real Estate Deal' className='w-7 h-7'></Image>
@@ -141,32 +152,34 @@ const NavBar = () => {
                 </button>
             </div >
             {/* Mobile toggler */}
-            <div className={`w-full shadow mb-10 px-3 bg-white lg:hidden transition-all duration-500 ease-in-out overflow-hidden ${isToggleMenu ? 'max-h-96' : 'max-h-0'}`}>
-                <ul className='px-2 space-y-3 py-2 '>
-                    {links.map((link) => {
-                        if (link.isDropdown) {
-                            return (
-                                <li className='w-full  ' onClick={() => setIsNavbarActive(link.title === isNavbarActive ? '' : link.title)}>
-                                    <Link className={`hover:text-green pr-5 font-medium text-[16px] flex transition ease duration-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}<BiSolidChevronDown key={`icons-${link.id}`} className={`mt-[2px] ml-[3px] transition-transform ease duration-200  ${isNavbarActive === link.title ? '-rotate-180' : 'rotate-0'}`} size="1em" /></Link>
-                                    <div className={`border border-gray-400 w-full ${isNavbarActive === link.title ? '' : 'hidden'}`}>
-                                        <ul key={`ul-menu-${link.id}`} className='py-3 space-y-2'>
-                                            {link.childPages.map((childPage, index) => {
-                                                return (
-                                                    <li key={`dropdown-item-${index}`} className='px-3  hover:bg-gray-200'><Link key={childPage.id} href={childPage.url}>{childPage.title}</Link></li>
-                                                )
-                                            })}
-                                        </ul>
-                                    </div>
-                                </li>
-                            )
-                        } else {
-                            return (
-                                <li className='w-full hover:text-green cursor-pointer' onClick={() => setIsNavbarActive(link.title)}><Link className={`font-medium text-[16px]  transition ease duration-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}</Link></li>
-                            )
-                        }
+            <div className={`w-full shadow mb-10 px-3 bg-white lg:hidden transition-all duration-700  overflow-hidden ${isToggleMenu ? 'max-h-96' : 'max-h-0'}`}>
+                <div className=' border-t border-grey-500'>
+                    <ul className='px-2 space-y-3 py-2 '>
+                        {links.map((link) => {
+                            if (link.isDropdown) {
+                                return (
+                                    <li key={`mobile-li-${link.id}`} className='w-full' onClick={() => setIsNavbarActive(link.title === isNavbarActive ? '' : link.title)}>
+                                        <Link className={`hover:text-green pr-5 font-medium text-[16px] flex transition ease duration-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}<BiSolidChevronDown key={`icons-${link.id}`} className={`mt-[2px] ml-[3px] transition-transform ease duration-200  ${isNavbarActive === link.title ? '-rotate-180' : 'rotate-0'}`} size="1em" /></Link>
+                                        <div className={`border border-gray-400 w-full ${isNavbarActive === link.title ? '' : 'hidden'}`}>
+                                            <ul key={`ul-menu-${link.id}`} className='py-3 space-y-2'>
+                                                {link.childPages.map((childPage, index) => {
+                                                    return (
+                                                        <li key={`dropdown-item-${index}`} className='px-3  hover:bg-gray-200'><Link key={childPage.id} href={childPage.url}>{childPage.title}</Link></li>
+                                                    )
+                                                })}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                )
+                            } else {
+                                return (
+                                    <li key={`mobile-li-${link.id}`} className='w-full hover:text-green cursor-pointer' onClick={() => setIsNavbarActive(link.title)}><Link className={`font-medium text-[16px]  transition ease duration-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}</Link></li>
+                                )
+                            }
 
-                    })}
-                </ul>
+                        })}
+                    </ul>
+                </div>
             </div>
         </div >
 

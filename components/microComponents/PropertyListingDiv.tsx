@@ -13,12 +13,12 @@ const PropertyListingDiv = ({ id, imgUrl, type, typeBuilding, price, title, addr
     }
     var priceDelimiter = numberWithCommas(price);
     return (
-        <AnimatedAOS className='w-full h-full flex flex-col relative shadow-lg box-content' data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" data-aos-delay={`${id * 200}`} >
-            <div className='w-full overflow-hidden rounded-t-lg'>
+        <AnimatedAOS className='w-full h-full flex flex-col  shadow-lg box-content' data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay={`${id * 200}`} >
+            <div className='w-full overflow-hidden rounded-t-lg relative'>
                 <Image src={imgUrl} alt={title} className='w-full h-full mb-3 object-fit rounded-t-lg hover:scale-125 ease-in-out duration-500' width={600} height={400}></Image>
+                <button className='bg-green px-4 py-1 absolute top-[10%] left-[5%] rounded-md text-white'>{type}</button>
+                <div className='bg-white text-green px-4 py-1 rounded-md absolute bottom-[-3%] left-[5%]'>{typeBuilding}</div>
             </div>
-            <button className='bg-green px-4 py-1 absolute top-6 left-6 rounded-md text-white'>{type}</button>
-            <div className='bg-white text-green px-4 py-1 rounded-md absolute top-[260px] left-5'>{typeBuilding}</div>
             <h3 className='text-green text-xl font-bold ml-5 mb-3  mt-3'>${priceDelimiter}</h3>
             <h3 className='ml-5 text-xl font-bold mb-1'>{title}</h3>
             <p className='flex ml-4 mb-2 text-stone-500 items-center'><MdLocationOn size={22} className='text-green mr-1' />{address}</p>

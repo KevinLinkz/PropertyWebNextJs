@@ -10,7 +10,7 @@ interface props { id: number, imgUrl: string, name: string, profile: string, url
 
 const PropertyAgentsDiv = ({ id, imgUrl, name, profile, urlFacebook, urlTwitter, urlInstagram }: props) => {
     return (
-        <AnimatedAOS className='w-full h-full shadow-md rounded-md' data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" data-aos-delay={`${id * 100}`} data-aos-easing="ease">
+        <AnimatedAOS className='w-full h-full shadow-md rounded-md' data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay={`${id * 100}`} data-aos-easing="ease">
             <Image src={imgUrl} alt={name} className='w-full h-46 rounded-t-md' width={1000} height={1000}></Image>
             <div className='flex items-center justify-center -mt-6'>
                 <div className='bg-white rounded-full w-10 h-10 flex items-center justify-center mr-3 shadow-md'>

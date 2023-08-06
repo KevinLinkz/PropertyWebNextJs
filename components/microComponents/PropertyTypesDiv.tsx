@@ -7,7 +7,7 @@ interface props { id: number, title: string, desc: string, url: string }
 const PropertyTypesDiv = ({ id, title, desc, url }: props) => {
 
   return (
-    <AnimatedAOS key={id} className={`bg-green-body p-4 rounded-lg w-full`} data-aos="fade-up" data-aos-once="false" data-aos-duration='1000' data-aos-delay={`${id * 100}`} data-aos-easing="ease-in-out">
+    <AnimatedAOS key={id} className={`bg-green-body p-4 rounded-lg w-full`} data-aos="fade-up" data-aos-once="true" data-aos-duration='500' data-aos-delay={`${id * 100}`} data-aos-easing="ease-in-out">
       <div className='border border-green border-dashed rounded-lg bg-white group hover:bg-green transition-color ease duration-300 flex justify-center items-center flex-col p-5 '>
         <div className='rounded-full w-[80px] h-[80px] border border-green border-dashed bg-white flex justify-center items-center '>
           <Image className='object-cover' alt={title} src={url} width={45} height={45}></Image>
