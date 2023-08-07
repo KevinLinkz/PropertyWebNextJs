@@ -48,7 +48,7 @@ const Testimonials = () => {
     return (
         <AnimatedAOS className='' data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease">
             <section id='Testimonials' className='w-full h-full flex flex-col justify-center items-center mb-20 xl:px-5 xs:px-10'>
-                <h1 className='md:text-4xl xs:text-2xl font-bold mt-28 mb-5'>Our Clients Say!</h1>
+                <h1 className='md:text-4xl xs:text-2xl font-bold  mb-5'>Our Clients Say!</h1>
                 <p className='text-center text-stone-600 lg:w-3/5 xs:w-11/12  mb-12'>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
 
                 <div className='grid grid-cols-[5%,90%,5%]  w-full'>

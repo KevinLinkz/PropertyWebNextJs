@@ -13,7 +13,7 @@ const Inquiry = () => {
                         <option value="Property Type 2">Property Type 2</option>
                         <option value="Property Type 3">Property Type 3</option>
                     </select>
-                    <BiSolidChevronDown size='2em' className='absolute top-[15px] lg:left-[87%] xs:left-[80%]' />
+                    <BiSolidChevronDown size='2em' className='absolute top-[15px] lg:left-[87%] xs:left-[80%] text-gray-400' />
                 </div>
                 <div className='relative w-full h-14 mr-2 '>
                     <select id="Location" className='w-full h-14 rounded-md mr-2 p-3 appearance-none  text-gray-400'>
@@ -22,7 +22,7 @@ const Inquiry = () => {
                         <option value="Location 2">Location 2</option>
                         <option value="Location 3">Location 3</option>
                     </select>
-                    <BiSolidChevronDown size='2em' className='absolute top-[15px] lg:left-[87%] xs:left-[80%]' />
+                    <BiSolidChevronDown size='2em' className='absolute top-[15px] lg:left-[87%] xs:left-[80%] text-gray-400' />
                 </div>
                 <div>
                     <button className='w-full h-14 bg-darkblue text-white rounded-md mr-2'>Search</button>

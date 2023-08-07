@@ -43,7 +43,7 @@ const datas = [
 
 const PropertyAgents = () => {
     return (
-        <section id='PropertyAgents' className='w-full h-full flex justify-center flex-col items-center xl:px-5 xs:px-10'>
+        <section id='PropertyAgents' className='w-full h-full flex justify-center flex-col items-center mb-32 xl:px-5 xs:px-10'>
             <AnimatedAOS className='flex justify-center flex-col items-center' data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease">
                 <h1 className='lg:text-5xl md:text-4xl xs:text-2xl  font-bold mt-20 mb-5'>Property Agents</h1>
                 <p className='text-stone-500 text-center lg:w-3/5 xs:w-11/12 mb-10'>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
