@@ -86,7 +86,7 @@ const PropertyListing = () => {
         <section id='PropertyListing' className='w-full h-full xl:px-5 xs:px-10'>
             <div className='grid lg:grid-cols-2 xs:grid-cols-1 xs:gap-y-5 grid-rows-1 w-full mb-10'>
                 <AnimatedAOS className="" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                    <h1 className='sm:text-4xl xs:text-3xl font-bold mb-5'>Property Listing</h1>
+                    <h1 className='sm:text-4xl xs:text-2xl font-bold mb-5'>Property Listing</h1>
                     <p className='lg:w-[90%] xs:w-full text-stone-500'>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit diam justo sed rebum.</p>
                 </AnimatedAOS>
                 <AnimatedAOS className="w-full h-full flex justify-around items-end  mb-5" data-aos="fade-left" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out">

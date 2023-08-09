@@ -50,7 +50,6 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
           {/* <div className='container flex flex-col mx-auto relative bg-white '> */}
 
           <NavBar />
-
           {children}
           <Footer />
 

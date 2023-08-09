@@ -43,3 +43,7 @@ html{
     animation-delay: 6s;
      
 }
+
+.input-text{
+    @apply focus:ring-4 focus:ring-green bg-transparent border   rounded ;
+}

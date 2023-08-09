@@ -13,7 +13,7 @@ import AnimatedAOS from '@components/AnimatedAOS'
 
 const Footer = () => {
     return (
-        <AnimatedAOS className='' data-aos="fade-in" data-aos-once="false" data-aos-duration="1000" data-aos-easing="ease">
+        <AnimatedAOS className='' data-aos="fade-in" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease">
             <section id='Footer' className='w-full bg-darkblue xl:px-5 xs:px-10'>
                 <div className='grid lg:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1 grid-rows-1 lg:gap-y-10 xs:gap-y-12  gap-x-5 w-full  pt-20 mb-20'>
                     <div className='w-full h-full flex flex-col'>
@@ -54,7 +54,7 @@ const Footer = () => {
                         <h3 className='text-xl fon flex flex-col font-bold text-white mb-7'>Newsletter</h3>
                         <p className='text-slate-400 font-medium mb-3'>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                         <div className='w-full relative '>
-                            <input type='text' className='focus:ring focus:ring-green w-[96%] h-14 px-5 bg-transparent border border-white rounded text-slate-400' placeholder='Your Email'></input>
+                            <input type='text' className='input-text w-[96%] h-14 px-5 border-white text-slate-400' placeholder='Your Email'></input>
                             <button className='absolute top-[15%] right-5 button-green'>SignUp</button>
                         </div>
                     </div>
