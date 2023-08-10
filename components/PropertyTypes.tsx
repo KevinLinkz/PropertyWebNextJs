@@ -55,7 +55,7 @@ const datas = [
 const PropertyTypes = () => {
     return (
         <AnimatedAOS className="" data-aos="fade-up" data-aos-once="true" data-aos-duration="500" data-aos-easing="ease-in-out">
-            <section id='PropertyTypes' className=' w-full h-full flex flex-col justify-center items-center pt-14 lg:mt-10 xl:px-5 xs:px-10'>
+            <section id='PropertyTypes' className=' w-full h-full flex flex-col justify-center items-center my-20 lg:mt-10 xl:px-5 xs:px-10'>
                 <h1 className={`lg:text-5xl sm:text-4xl xs:text-2xl font-bold my-5`}>Property Types</h1>
                 <p className={`lg:w-3/4 xs:w-11/12 text-center text-stone-500 mb-12`}>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
 

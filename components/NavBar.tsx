@@ -16,7 +16,7 @@ const links = [
     {
         id: 2,
         title: "ABOUT",
-        url: "about",
+        url: "/about",
         isDropdown: false,
         childPages: []
     },
@@ -29,17 +29,17 @@ const links = [
             {
                 id: 6,
                 title: "Property List",
-                url: "/"
+                url: "/property/list"
             },
             {
                 id: 7,
                 title: "Property Type",
-                url: "/"
+                url: "/property/type"
             },
             {
                 id: 8,
                 title: "Property Agent",
-                url: "/"
+                url: "/property/agent"
             }
         ]
     },
@@ -52,7 +52,7 @@ const links = [
             {
                 id: 9,
                 title: "Testimonial",
-                url: "/"
+                url: "/pages/testimonial"
             },
             {
                 id: 10,
@@ -64,7 +64,7 @@ const links = [
     {
         id: 5,
         title: "CONTACT",
-        url: "contact",
+        url: "/contact",
         isDropdown: false,
         childPages: []
     },

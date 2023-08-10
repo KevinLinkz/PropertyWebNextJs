@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import PropertyAgents from '@components/PropertyAgents'
+import Testimonials from '@components/Testimonials'
 import BannerTemplate from '@components/BannerTemplate'
 import Inquiry from '@components/Inquiry'
 import ContactUs from '@components/ContactUs'
@@ -18,20 +18,18 @@ const breadcrumb: DataType[] = [
     },
     {
         "id": 3,
-        "title": "PROPERTY AGENTS",
+        "title": "TESTIMONIAL",
         "url": "/"
     },
 ]
-
-const agent = () => {
+const testimonial = () => {
     return (
-        <section id='PropertyAgent'>
-            <BannerTemplate title="Property Agents" data={breadcrumb} />
+        <section id='Testimonial'>
+            <BannerTemplate title="Testimonial" data={breadcrumb} />
             <Inquiry />
-            <PropertyAgents />
-            <ContactUs />
+            <Testimonials />
         </section>
     )
 }
 
-export default agent
+export default testimonial

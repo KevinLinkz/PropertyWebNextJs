@@ -83,7 +83,7 @@ const PropertyListing = () => {
 
     return (
 
-        <section id='PropertyListing' className='w-full h-full xl:px-5 xs:px-10'>
+        <section id='PropertyListing' className='w-full h-full my-10 xl:px-5 xs:px-10'>
             <div className='grid lg:grid-cols-2 xs:grid-cols-1 xs:gap-y-5 grid-rows-1 w-full mb-10'>
                 <AnimatedAOS className="" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <h1 className='sm:text-4xl xs:text-2xl font-bold mb-5'>Property Listing</h1>

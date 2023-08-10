@@ -8,7 +8,7 @@ const About = () => {
 
     return (
         <AnimatedAOS className="" data-aos="fade-in" data-aos-once="true" data-aos-duration="500" data-aos-easing="ease-in-out">
-            <section id='About' className='w-full mb-20 pt-20 xl:px-5 xs:px-10'>
+            <section id='About' className='w-full my-10 xl:px-5 xs:px-10'>
                 <div className='w-full h-full grid lg:grid-cols-2 xs:grid-cols-1 grid-rows-1 xs:gap-y-10 '>
                     <div className='w-full h-full relative flex items-center justify-center overflow-hidden '>
                         <div className='w-[600px] h-full bg-green absolute z-[1] skew-x-5 top-0 -left-[300px] skew-x-[24deg]'></div>
