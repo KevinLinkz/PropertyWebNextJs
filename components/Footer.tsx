@@ -62,8 +62,8 @@ const Footer = () => {
 
                 <div className='w-full h-full border-t border-slate-600 text-slate-400 font-medium flex md:flex-row xs:flex-col justify-between items-center px-5'>
                     <div className='md:text-left xs:text-center my-5  '>
-                        <p>© <span className='text-white underline underline-offset-2'>Your Site Name</span>, All Right Reserved. Designed By <span className='text-white underline underline-offset-2'>HTML Codex</span></p>
-                        <p>Distributed By <span className='text-white underline underline-offset-2'>ThemeWagon</span></p>
+                        <p>© <span className='text-white underline underline-offset-2'>Property Site Powered by NextJs</span>, All Right Reserved. Designed By <span className='text-white underline underline-offset-2'>HTML Codex</span></p>
+                        <p>Distributed By <span className='text-white underline underline-offset-2'>KevinLinkz</span></p>
                     </div>
 
                     <div className='text-white lg:mb-0 xs:mb-5'>
