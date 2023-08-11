@@ -75,6 +75,7 @@ const Footer = () => {
                 </div>
             </section>
         </AnimatedAOS>
+
     )
 }
 
