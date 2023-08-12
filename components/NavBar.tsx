@@ -89,12 +89,21 @@ const NavBar = () => {
     const setParentChildMenuActive = (strParentTitle: string, strChildTitle: string) => {
         setIsNavbarActive(strParentTitle)
         setIsNavbarChildActive(strChildTitle);
-        setIsToggleMenu(false);
     }
     const setParentMenuActive = (strParentTitle: string) => {
         setIsNavbarActive(strParentTitle)
         setIsNavbarChildActive('');
-        setIsToggleMenu(false);
+    }
+    const setMobileParentChildMenuActive = (strParentTitle: string, strChildTitle: string) => {
+        setIsNavbarActive(strParentTitle)
+        setIsNavbarChildActive(strChildTitle);
+        setIsToggleMenu(false)
+    }
+    const setMobileParentMenuActive = (strParentTitle: string) => {
+        setIsNavbarActive(strParentTitle)
+        setIsNavbarChildActive('');
+        setIsToggleMenu(false)
+
     }
 
     const handleNavBar = () => {
@@ -168,13 +177,13 @@ const NavBar = () => {
                         {links.map((link) => {
                             if (link.isDropdown) {
                                 return (
-                                    <li key={`mobile-li-${link.id}`} className='w-full' onClick={() => setIsNavbarActive(link.title === isNavbarActive ? '' : link.title)}>
+                                    <li key={`mobile-li-${link.id}`} className='w-full' onClick={() => setIsNavbarActive(link.title)}>
                                         <Link className={`hover:text-green pr-5 font-medium text-[16px] flex transition ease duration-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}<BiSolidChevronDown key={`icons-${link.id}`} className={`mt-[2px] ml-[3px] transition-transform ease duration-200  ${isNavbarActive === link.title ? '-rotate-180' : 'rotate-0'}`} size="1em" /></Link>
                                         <div className={`border border-gray-400 w-full ${isNavbarActive === link.title ? '' : 'hidden'}`}>
                                             <ul key={`ul-menu-${link.id}`} className='py-3 space-y-2'>
                                                 {link.childPages.map((childPage, index) => {
                                                     return (
-                                                        <li key={`dropdown-item-${index}`} className='px-3  hover:bg-gray-200'><Link key={childPage.id} href={childPage.url}>{childPage.title}</Link></li>
+                                                        <li key={`dropdown-item-${index}`} className={`px-3  hover:bg-gray-200 ${isNavbarChildActive === childPage.title ? 'text-white bg-green' : ''}`}><Link key={childPage.id} onClick={() => setMobileParentChildMenuActive(link.title, childPage.title)} href={childPage.url}>{childPage.title}</Link></li>
                                                     )
                                                 })}
                                             </ul>
@@ -183,7 +192,7 @@ const NavBar = () => {
                                 )
                             } else {
                                 return (
-                                    <li key={`mobile-li-${link.id}`} className='w-full hover:text-green cursor-pointer' onClick={() => setIsNavbarActive(link.title)}><Link className={`font-medium text-[16px]  transition ease duration-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}</Link></li>
+                                    <li key={`mobile-li-${link.id}`} className='w-full hover:text-green cursor-pointer' onClick={() => setMobileParentMenuActive(link.title)}><Link className={`font-medium text-[16px]  transition ease duration-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}</Link></li>
                                 )
                             }
 
