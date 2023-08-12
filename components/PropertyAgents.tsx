@@ -3,15 +3,15 @@ import PropertyAgentsDiv from './microComponents/PropertyAgentsDiv'
 import AnimatedAOS from '@components/AnimatedAOS'
 
 const datas = [
-    {
-        "id": 1,
-        "img-url": "/img/team-1.jpg",
-        "name": "Grace",
-        "profile": "Developer",
-        "urlFacebook": "www.facebook.com",
-        "urlTwitter": "www.twitter.com",
-        "urlInstagram": "www.instagram.com"
-    },
+    // {
+    //     "id": 1,
+    //     "img-url": "/img/team-1.jpg",
+    //     "name": "Grace",
+    //     "profile": "Developer",
+    //     "urlFacebook": "www.facebook.com",
+    //     "urlTwitter": "www.twitter.com",
+    //     "urlInstagram": "www.instagram.com"
+    // },
     {
         "id": 2,
         "img-url": "/img/team-2.jpg",
