@@ -89,10 +89,12 @@ const NavBar = () => {
     const setParentChildMenuActive = (strParentTitle: string, strChildTitle: string) => {
         setIsNavbarActive(strParentTitle)
         setIsNavbarChildActive(strChildTitle);
+        setIsToggleMenu(false);
     }
     const setParentMenuActive = (strParentTitle: string) => {
         setIsNavbarActive(strParentTitle)
         setIsNavbarChildActive('');
+        setIsToggleMenu(false);
     }
 
     const handleNavBar = () => {
