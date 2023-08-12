@@ -13,7 +13,7 @@ const PropertyListingDiv = ({ id, imgUrl, type, typeBuilding, price, title, addr
     }
     var priceDelimiter = numberWithCommas(price);
     return (
-        <AnimatedAOS className='w-full h-full flex flex-col  shadow-lg box-content' data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay={`${id * 200}`} >
+        <AnimatedAOS className='w-full h-full flex flex-col overflow-hidden shadow-lg' data-aos="fade-up" data-aos-once="true" data-aos-duration="500" data-aos-delay={`${id * 100}`} >
             <div className='w-full overflow-hidden rounded-t-lg relative'>
                 <Image src={imgUrl} alt={title} className='w-full h-full mb-3 object-fit rounded-t-lg hover:scale-125 ease-in-out duration-500' width={600} height={400}></Image>
                 <button className='bg-green px-4 py-1 absolute top-[10%] left-[5%] rounded-md text-white'>{type}</button>
