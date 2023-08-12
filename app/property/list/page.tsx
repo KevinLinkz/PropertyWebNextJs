@@ -23,7 +23,7 @@ const breadcrumb: DataType[] = [
     },
 ]
 
-const list = () => {
+const ListPage = () => {
     return (
         <section id='PropertyList'>
             <BannerTemplate title="Property List" data={breadcrumb} />
@@ -34,4 +34,4 @@ const list = () => {
     )
 }
 
-export default list
+export default ListPage

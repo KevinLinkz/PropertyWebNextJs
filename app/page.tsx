@@ -20,6 +20,7 @@ export default function Home() {
   }, []);
   return (
     <>
+
       {/* <Test2 /> */}
       <Banner />
       <Inquiry />

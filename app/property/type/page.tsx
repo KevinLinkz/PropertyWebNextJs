@@ -21,7 +21,7 @@ const breadcrumb: DataType[] = [
         "url": "/"
     },
 ]
-const type = () => {
+const TypePage = () => {
     return (
         <section id='PropertyType'>
             <BannerTemplate title="Property Type" data={breadcrumb} />
@@ -31,4 +31,4 @@ const type = () => {
     )
 }
 
-export default type
+export default TypePage

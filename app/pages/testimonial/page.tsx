@@ -22,7 +22,7 @@ const breadcrumb: DataType[] = [
         "url": "/"
     },
 ]
-const testimonial = () => {
+const TestimonialPage = () => {
     return (
         <section id='Testimonial'>
             <BannerTemplate title="Testimonial" data={breadcrumb} />
@@ -32,4 +32,4 @@ const testimonial = () => {
     )
 }
 
-export default testimonial
+export default TestimonialPage

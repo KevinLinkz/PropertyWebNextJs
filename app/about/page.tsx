@@ -10,7 +10,8 @@ import 'animate.css';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { DataType } from '@interface/breadcrumb'
-const about = () => {
+
+const AboutPage = () => {
     const breadcrumb: DataType[] = [
         {
             "id": 1,
@@ -43,4 +44,4 @@ const about = () => {
     )
 }
 
-export default about
+export default AboutPage

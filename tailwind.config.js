@@ -15,6 +15,10 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+     
+      animation: {
+        'spin': 'spin 2s ease infinite',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

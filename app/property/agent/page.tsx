@@ -23,7 +23,7 @@ const breadcrumb: DataType[] = [
     },
 ]
 
-const agent = () => {
+const AgentPage = () => {
     return (
         <section id='PropertyAgent'>
             <BannerTemplate title="Property Agents" data={breadcrumb} />
@@ -34,4 +34,4 @@ const agent = () => {
     )
 }
 
-export default agent
+export default AgentPage

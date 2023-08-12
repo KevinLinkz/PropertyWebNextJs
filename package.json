@@ -2,7 +2,9 @@
   "name": "property_next_js",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+  "homepage": "https://KevinLinkz.github.io/PropertyWebNextJs",
+    "scripts": {
+    "deploy": "next build && next export && npx gh-pages -d out",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

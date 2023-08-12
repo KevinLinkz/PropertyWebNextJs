@@ -45,7 +45,7 @@ const ContactUsPage = () => {
                 </AnimatedAOS>
 
                 <AnimatedAOS className='w-full h-full ' data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease">
-                    <p>The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <Link href=''>Download Now.</Link></p>
+                    <p>The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you&apos;re done. <Link href=''>Download Now.</Link></p>
                     <form>
                         <div className='w-full h-full grid  md:grid-cols-2 xs:grid-cols-1 grid-rows-5  gap-3 my-5'>
                             <div>

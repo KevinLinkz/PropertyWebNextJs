@@ -9,7 +9,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { DataType } from '@interface/breadcrumb'
 
-const contact = () => {
+const ContactPage = () => {
     const breadcrumb: DataType[] = [
         {
             "id": 1,
@@ -39,4 +39,4 @@ const contact = () => {
     )
 }
 
-export default contact
+export default ContactPage

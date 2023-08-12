@@ -23,7 +23,7 @@ const links = [
     {
         id: 3,
         title: "PROPERTY",
-        url: "/",
+        url: "/property/list",
         isDropdown: true,
         childPages: [
             {
@@ -46,7 +46,7 @@ const links = [
     {
         id: 4,
         title: "PAGES",
-        url: "/",
+        url: "/pages/testimonial",
         isDropdown: true,
         childPages: [
             {
@@ -74,6 +74,7 @@ const NavBar = () => {
     const [isNavbarSticky, setIsNavbarSticky] = useState<boolean>(false);
     const [isToggleMenu, setIsToggleMenu] = useState<boolean>(false);
     const [isNavbarActive, setIsNavbarActive] = useState<string>('HOME');
+    const [isNavbarChildActive, setIsNavbarChildActive] = useState<string>('');
     const [classDropDown, setClassDropDown] = useState<string>('');
     const [offsetNavBar, setOffsetNavBar] = useState<number>(0);
     const refNavBar = useRef<HTMLDivElement>(null)
@@ -85,7 +86,14 @@ const NavBar = () => {
         setClassDropDown('')
     }
 
-
+    const setParentChildMenuActive = (strParentTitle: string, strChildTitle: string) => {
+        setIsNavbarActive(strParentTitle)
+        setIsNavbarChildActive(strChildTitle);
+    }
+    const setParentMenuActive = (strParentTitle: string) => {
+        setIsNavbarActive(strParentTitle)
+        setIsNavbarChildActive('');
+    }
 
     const handleNavBar = () => {
         const nav = refNavBar.current as HTMLDivElement;
@@ -108,7 +116,7 @@ const NavBar = () => {
             window.removeEventListener('scroll', handleNavBar);
             window.removeEventListener('resize', handleNavBarResize);
         }
-    }, [offsetNavBar])
+    }, [offsetNavBar, handleNavBar])
 
     return (
         <div ref={refNavBar} id='Navbar' className={`lg:h-[100px] lg:flex z-20 transition-all ease duration-500 ${isNavbarSticky === true ? 'sticky top-0 items-start px-0' : 'items-end lg:px-8'}`}>
@@ -117,7 +125,7 @@ const NavBar = () => {
                     <div className='flex justify-center items-center w-11 h-11 border border-green border-dashed rounded-full'>
                         <Image src={IconNav} alt='Real Estate Deal' className='w-7 h-7'></Image>
                     </div>
-                    <h2 className=' text-green text-4xl my-auto ml-2 font-bold'>Makaan</h2>
+                    <h2 className=' text-green text-4xl my-auto ml-2 font-bold'>Houses</h2>
                 </div>
 
                 <div className='lg:flex w-30 items-center pr-2 xs:hidden'>
@@ -130,7 +138,7 @@ const NavBar = () => {
                                         <ul key={`ul-menu-${link.id}`}>
                                             {link.childPages.map((childPage, index) => {
                                                 return (
-                                                    <li key={`dropdown-item-${index}`} className='px-3 py-1 hover:bg-gray-200'><Link key={childPage.id} href={childPage.url}>{childPage.title}</Link></li>
+                                                    <li onClick={() => setParentChildMenuActive(link.title, childPage.title)} key={`dropdown-item-${index}`} className={`px-3 py-1 hover:bg-gray-200 ${isNavbarChildActive === childPage.title ? 'text-white bg-green' : ''}`}><Link key={childPage.id} href={childPage.url}>{childPage.title}</Link></li>
                                                 )
                                             })}
                                         </ul>
@@ -140,7 +148,7 @@ const NavBar = () => {
                             )
                         } else {
                             return (
-                                <Link onClick={() => setIsNavbarActive(link.title)} className={`pr-6 font-medium text-[16px] hover:text-green transition ease duration-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}</Link>
+                                <Link onClick={() => setParentMenuActive(link.title)} className={`pr-6 font-medium text-[16px] hover:text-green transition ease duration-100 ${isNavbarActive === link.title ? 'text-green' : ''}`} key={link.id} href={link.url}>{link.title}</Link>
                             )
                         }
 
