@@ -13,7 +13,7 @@ import AnimatedAOS from '@components/AnimatedAOS'
 
 const Footer = () => {
     return (
-        <AnimatedAOS className='' data-aos="fade-in" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease">
+        <AnimatedAOS className='' data-aos="fade-in" data-aos-once="true" data-aos-duration="500" data-aos-easing="ease">
             <section id='Footer' className='w-full bg-darkblue xl:px-5 xs:px-10'>
                 <div className='grid lg:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1 grid-rows-1 lg:gap-y-10 xs:gap-y-12  gap-x-5 w-full  pt-20 mb-20'>
                     <div className='w-full h-full flex flex-col'>

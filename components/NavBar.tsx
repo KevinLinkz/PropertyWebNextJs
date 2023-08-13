@@ -57,7 +57,7 @@ const links = [
             {
                 id: 10,
                 title: "404 Error",
-                url: "/"
+                url: ""
             }
         ]
     },

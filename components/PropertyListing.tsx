@@ -83,24 +83,20 @@ const PropertyListing = () => {
 
     return (
 
-        <section id='PropertyListing' className='w-full h-full my-10 xl:px-5 xs:px-10'>
-            <div className='grid lg:grid-cols-2 xs:grid-cols-1 xs:gap-y-5 grid-rows-1 w-full mb-10'>
-                <AnimatedAOS className="" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out">
+        <section id='PropertyListing' className='w-full h-full my-10 xl:px-5 xs:px-10 overflow-x-hidden'>
+            <div className='grid lg:grid-cols-2 xs:grid-cols-1 xs:gap-y-5 grid-rows-1 w-full h-full mb-10'>
+                <AnimatedAOS className="w-full h-full" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <h1 className='sm:text-4xl xs:text-2xl font-bold mb-5'>Property Listing</h1>
                     <p className='lg:w-[90%] xs:w-full text-stone-500'>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit diam justo sed rebum.</p>
                 </AnimatedAOS>
-                <AnimatedAOS className="w-full h-full flex justify-around items-end  mb-5" data-aos="fade-left" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out">
-
-                    <div className='w-full flex lg:justify-end xs:justify-start items-end'>
-                        {
-                            lstButton.map((text) => {
-                                return (
-                                    <button key={`button-${text}`} className={`button-property-listing ${isButtonActive === text ? 'active' : ''}`} onClick={() => { setIsButtonActive(text) }}>{text}</button>
-                                )
-                            })
-                        }
-                    </div>
-
+                <AnimatedAOS className="w-full h-full flex items-end lg:justify-end xs:justify-start " data-aos="fade-left" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                    {
+                        lstButton.map((text) => {
+                            return (
+                                <button key={`button-${text}`} className={`button-property-listing lg:ml-3 xs:mr-3 ${isButtonActive === text ? 'active' : ''}`} onClick={() => { setIsButtonActive(text) }}>{text}</button>
+                            )
+                        })
+                    }
                 </AnimatedAOS>
 
             </div>
@@ -113,7 +109,7 @@ const PropertyListing = () => {
                     })
                 }
             </div>
-            <AnimatedAOS className='w-full mt-8 mb-16 flex justify-center ' data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease">
+            <AnimatedAOS className='w-full mt-8 mb-16 flex justify-center ' data-aos="fade-up" data-aos-once="true" data-aos-duration="500" data-aos-delay="500" data-aos-easing="ease">
                 <button className='button-green w-64 h-14'>Browse More Property</button>
             </AnimatedAOS>
 
